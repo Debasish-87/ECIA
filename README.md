@@ -5,6 +5,22 @@ Production-grade AWS infrastructure provisioned entirely with Terraform.
 This repository provides a modular, scalable, and secure Infrastructure-as-Code (IaC) implementation for deploying enterprise workloads on AWS. The platform includes networking, compute, storage, databases, identity management, monitoring, and operational tooling, all managed through a single Terraform codebase.
 
 ---
+## Business Impact & Engineering Outcomes
+
+* Architected and automated a **production-grade AWS landing zone** using Terraform, provisioning **100+ cloud resources** across networking, compute, storage, security, monitoring, and database layers.
+* Designed a **multi-tier, highly available infrastructure** spanning **3 Availability Zones**, eliminating single points of failure for critical application workloads.
+* Developed **11+ reusable Terraform modules**, reducing infrastructure duplication and enabling standardized deployments across **Dev, Staging, and Production** environments.
+* Achieved **100% Infrastructure-as-Code adoption**, eliminating manual console-based provisioning and ensuring repeatable, auditable deployments.
+* Implemented Auto Scaling architecture supporting **1–8 EC2 instances**, enabling dynamic workload handling while optimizing infrastructure utilization.
+* Reduced operational risk through **fully automated provisioning, scaling, monitoring, and recovery workflows**, minimizing configuration drift across environments.
+* Strengthened platform security with **defense-in-depth architecture**, including WAF protection, private subnets, IMDSv2 enforcement, IAM least-privilege policies, Secrets Manager integration, and VPC Flow Logs.
+* Secured data across **4 critical service layers (EBS, S3, RDS, Secrets Manager)** using encryption-at-rest and centralized key management with AWS KMS.
+* Built centralized observability using CloudWatch dashboards, alarms, log aggregation, and SNS notifications, providing **real-time visibility across infrastructure components**.
+* Implemented enterprise-grade traffic management using Application Load Balancers, health checks, HTTPS enforcement, and Route53 integration to improve service reliability.
+* Automated lifecycle management for storage and logging systems, enabling long-term retention, versioning, archival policies, and operational compliance readiness.
+* Established environment isolation and deployment standards supporting secure promotion of workloads from development through production.
+
+---
 
 # Architecture Overview
 
@@ -88,6 +104,53 @@ ECIA/
 
 ---
 
+---
+
+# Security Architecture
+
+The platform follows a defense-in-depth approach and incorporates AWS-native security controls across networking, compute, storage, and identity layers.
+
+### Security Controls Implemented
+
+| Control                     | Purpose                              |
+| --------------------------- | ------------------------------------ |
+| IMDSv2 Enforcement          | Prevent metadata credential theft    |
+| Private Application Subnets | Reduce direct internet exposure      |
+| Security Group Segmentation | Enforce tier isolation               |
+| VPC Flow Logs               | Network visibility and investigation |
+| AWS WAF                     | Protect against common web attacks   |
+| KMS Encryption              | Encrypt data at rest                 |
+| Secrets Manager             | Secure credential storage            |
+| SSM Session Manager         | Secure administrative access         |
+| CloudWatch Monitoring       | Operational visibility               |
+| SNS Alerting                | Incident notification                |
+
+### Threats Addressed
+
+* Unauthorized infrastructure access
+* Excessive network exposure
+* Credential theft attempts
+* Unencrypted data storage
+* Layer 7 web attacks
+* Brute-force traffic patterns
+* Misconfigured security boundaries
+* Operational visibility gaps
+
+---
+
+# Current Limitations
+
+The platform intentionally focuses on core infrastructure capabilities and currently does not include:
+
+* Cross-region disaster recovery
+* Blue-Green deployment workflows
+* GitHub Actions CI/CD pipelines
+* Infrastructure testing with Terratest
+* Policy-as-Code validation
+* Automated compliance assessment
+* Infrastructure drift detection
+
+---
 # Core Components
 
 ## Networking
