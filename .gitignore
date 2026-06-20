@@ -1,0 +1,95 @@
+# Terraform state files — NEVER commit these
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Plan files (may contain secrets)
+tfplan.*
+*.tfplan
+
+# Terraform working directory
+.terraform/
+.terraform.lock.hcl
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# tfvars with secrets — use -var flag instead
+# *.tfvars  ← keep commented so env files stay tracked
+
+# Environment variable files
+.env
+.env.*
+*.env
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temp
+tmp/
+temp/
+
+
+# Terraform
+
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Terraform plans
+
+*.tfplan
+tfplan
+
+# Sensitive variable files
+
+*.tfvars
+*.tfvars.json
+
+# SSH Keys
+
+*.pem
+*.key
+
+# Environment files
+
+.env
+.env.*
+
+# IDE
+
+.vscode/
+.idea/
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# Logs
+
+*.log
+logs/
+
+# Local overrides
+
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
