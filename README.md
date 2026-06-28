@@ -1,4 +1,4 @@
-# ECIA - Enterprise Cloud Infrastructure Architect
+# CIA - Cloud Infrastructure Architect
 
 Production-grade AWS infrastructure provisioned entirely with Terraform.
 
@@ -63,12 +63,12 @@ Internet
 
 ## Interactive Architecture
 
-👉 [Open Interactive Architecture](https://debasish-87.github.io/ECIA/)
+👉 [Open Interactive Architecture](https://debasish-87.github.io/CIA/)
 
 # Repository Structure
 
 ```text
-ECIA/
+CIA/
 │
 ├── main.tf
 ├── variables.tf
